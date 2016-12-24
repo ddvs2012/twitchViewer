@@ -1,13 +1,27 @@
-
+@import url('https://fonts.googleapis.com/css?family=Anton|PT+Sans');
 
 body{
 	background:#2C2640!important;
 }
-h1,h3{
+h1{
+  font-family: Anton !important;
+
   color:white !important;
+  text-shadow: 0px 0px 10px #5C5084;
+}
+span{
+  font-size: .5em;
+  transform: rotate(120deg) !important;
+}
+h3{
+  font-family: PT sans !important;
+  color:white !important;
+  font-weight: bold !important;
+  text-shadow: 0px 0px 10px #5C5084;
 }
 .text-center{
 	text-align:center;
+
 }
 .center{
 	align-items:center;
@@ -43,6 +57,7 @@ th.streamer{
 th.status{
   font-size: 1.5em;
   font-variant: small-caps;
+ /* transition:text 0.4s */
 
 }
 
@@ -74,6 +89,7 @@ table,tr,th,td{
   border-color: #8374C1 !important;
   outline-color: #8374C1 !important;
   color: white !important;
+  box-shadow: 0px 1px 2px #5C5084;
 } 
 
 .btn:hover{
@@ -91,5 +107,18 @@ table,tr,th,td{
 .offline{
 
 }.online{
-  
+  background-color: #45C659;
+}
+
+.formattedImg{
+  width: 32px;
+  margin-left: 10px;
+  float: left;
+}
+
+a img{
+  position:absolute;
+  margin-left:0;
+/*  magic number, set transform to -td width somehow?*/
+  transform: translateX(-60px);
 }

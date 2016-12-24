@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	var streamers=['docgotgame','freecodecamp','brunofin','gamecatt','ej_sa','comster_404'];
+	var streamers=['docgotgame','freecodecamp','brunofin','gamecatt','comster_404','rendhammertv','moonmoon_OW','ripperxtv','esl_overwatch'];
 
 	function getStreamerInfo(){
 
@@ -16,15 +16,16 @@ $(document).ready(function(){
 				//client-id provided but doesn't work
 				
 				success:function(data){
+					
 
 					if(data.stream == null){
 						status = 'offline';
 						var content='';
-						$('#table').append("<tr class='target offline'><td class='streamer'><a target='blank' href='https://www.twitch.tv/"+ streamer +"'>" + streamer + "<br><span class='content'>" + content + "</span></a></td><td class='status'>" + status + "</td></tr>");
+						$('#table').append("<tr class='target offline'><td class='streamer'><a target='blank' href='https://www.twitch.tv/"+ streamer + "'>" + streamer + "<br><span class='content'>" + content + "</span></a></td><td class='status'>" + status + "</td></tr>");
 					} else{
 						status = 'LIVE';
-						var content = '-streaming ' + data.stream.game + "-";
-						$('#table').append("<tr class='target online'><td class='streamer'><a target='blank' href='https://www.twitch.tv/"+ streamer +"'>" + streamer + "<br><span class='content'>" + content + "</span></a></td><td class='status'>" + status + "</td></tr>");
+						var content = '-' + data.stream.game + "-";
+						$('#table').append("<tr class='target online'><td class='streamer'><a target='blank' href='https://www.twitch.tv/"+ streamer +"'><img class='formattedImg' src='" + data.stream.channel.logo + "'>" + streamer + "<br><span class='content'>" + content + "</span></a></td><td class='status'>" + status + "</td></tr>");
 					}
 					
 				
@@ -40,7 +41,7 @@ $(document).ready(function(){
 			
 				},
 				error:(function(){
-					alert('oops');
+					alert('request error');
 				})
 
 			})
